@@ -1,11 +1,13 @@
 import * as React from 'react';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import { TabValueContext } from '../hooks/TabValueContextProvider';
+import { ProjectContext } from '../contexts/ProjectContextProvider';
+import Project from '../types/Project';
+import { useNavigate } from 'react-router-dom';
 
 type TabProps= {
-  projects: string[]
+  projects: Project[]
 }
 
 function a11yProps(index: number) {
@@ -17,23 +19,28 @@ function a11yProps(index: number) {
   
 function ProjectsTabs(props: TabProps) {  
 
-  const tabValueContext = useContext(TabValueContext);
-  if(!tabValueContext)
+  const projectContext = useContext(ProjectContext);
+  if(!projectContext)
     return null;
 
-    const {tabsValue ,setTabsValue} = tabValueContext;
+  const {setProject} = projectContext;
+  const navigate = useNavigate()
+  const [selected , setSelected] = useState(-1)
 
-    const handleChange = (_: React.SyntheticEvent, newValue: number) => {
-      setTabsValue(newValue);
-    };
-  
-    return (
-        <Tabs value={tabsValue} onChange={handleChange} aria-label="basic tabs example">
-          {props.projects.map((p, i) => {
-            return <Tab key={i} label={p} {...a11yProps(i)} />
-          })}
-        </Tabs>
-    );
+  const handleChange = (_: React.SyntheticEvent, newIndex: number) => {
+    const currentProject = props.projects[newIndex];
+    setSelected(newIndex);
+    setProject(currentProject);
+    navigate(`/project/${currentProject.name}`)
+  };
+
+  return (
+      <Tabs value={selected}  onChange={handleChange} aria-label="basic tabs example">
+        {props.projects.map((p, i) => {
+          return <Tab key={i} label={p.name} {...a11yProps(i)} />
+        })}
+      </Tabs>
+  );
   }
 
   export default ProjectsTabs;

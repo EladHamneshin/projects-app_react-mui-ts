@@ -1,13 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
 import './index.css'
-import TabValueContextProvider from './hooks/TabValueContextProvider.tsx'
+import ProjectContextProvider from './contexts/ProjectContextProvider.tsx'
+import router from './routes/Router.tsx'
+import { RouterProvider } from 'react-router-dom'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-      <TabValueContextProvider>
-        <App />
-      </TabValueContextProvider>
+      <ProjectContextProvider>
+        <RouterProvider router={router}/>
+      </ProjectContextProvider>
   </React.StrictMode>,
 )

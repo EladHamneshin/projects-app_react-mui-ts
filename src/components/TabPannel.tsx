@@ -1,29 +1,25 @@
-import * as React from 'react';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import { ProjectContext } from '../contexts/ProjectContextProvider';
+import { useContext } from 'react';
 
-interface TabPanelProps {
-  children?: React.ReactNode;
-  index: number;
-  value: number;
-}
 
-function TabPanel(props: TabPanelProps) {
-  const { children, value, index, ...other } = props;
 
+function TabPanel() {
+  const projectContext = useContext(ProjectContext);
+  if(!projectContext)
+    return null;
+
+    const {project} = projectContext;
+    
   return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
+    <div role="tabpanel">
+      {
+      project &&
+      <Box sx={{ p: 3 }}>
+        <Typography>{project.name}</Typography>
+      </Box>
+      }
     </div>
   );
 }

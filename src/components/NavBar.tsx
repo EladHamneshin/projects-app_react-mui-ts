@@ -2,9 +2,10 @@ import SpaceBetween from "./SpaceBetween";
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import ProjectsTabs from "./ProjectsTabs";
 import { Box } from "@mui/material";
+import Project from "../types/Project";
 
 type NavBarProps= {
-        projects: string[]
+        projects: Project[]
 }
 
 const Navbar = (props: NavBarProps) => {
