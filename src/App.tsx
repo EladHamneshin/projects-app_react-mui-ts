@@ -1,8 +1,5 @@
 import './App.css'
 import Navbar from './components/NavBar';
-import TabPanel from './components/TabPannel';
-import { useContext } from 'react';
-import { ProjectContext } from './contexts/ProjectContextProvider';
 import { Box } from '@mui/material';
 import Project from './types/Project';
 import { Outlet } from 'react-router-dom';

@@ -25,7 +25,7 @@ function ProjectsTabs(props: TabProps) {
 
   const {setProject} = projectContext;
   const navigate = useNavigate()
-  const [selected , setSelected] = useState(-1)
+  const [selected , setSelected] = useState<number | boolean>(false)
 
   const handleChange = (_: React.SyntheticEvent, newIndex: number) => {
     const currentProject = props.projects[newIndex];
