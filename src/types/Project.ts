@@ -1,8 +1,8 @@
-import Assignment from "./Assignment"
+import Task from "./Task"
 
 type Project = {
     name: String,
-    assignments?: Assignment[]
+    tasks?: Task[]
 }
 
 export default Project;

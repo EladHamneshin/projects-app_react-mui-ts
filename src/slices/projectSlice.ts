@@ -6,8 +6,13 @@ interface ProjectState{
     selected: false |  number;
 }
 
+const date = new Date()
+
 const initialState : ProjectState = {
-    projects: [{name:'p1'}, {name: 'p2'}, {name:'p3'}],
+    projects: [{name:'p1', tasks:[{name:"p11",endDate:date , status:"In Progress", description:[{description:"sdf"}]},
+    {name:"p12",endDate:date , status:"Pending", description:[{description:"sfg"}]},
+    {name:"p12",endDate:date , status:"Aborted", description:[{description:"sfg"}]},
+    {name:"p12",endDate:date , status:"Completed", description:[{description:"sfg"}]}]}],
     selected: false,
 }
 

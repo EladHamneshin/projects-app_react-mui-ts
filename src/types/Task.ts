@@ -1,11 +1,11 @@
 import Instruction from "./Instruction";
 import Status from "./Status";
 
-type Assignment = {
+type Task = {
     name: string,
     endDate: Date,
     description: Instruction[]
     status: Status
 }
 
-export default Assignment;
+export default Task;

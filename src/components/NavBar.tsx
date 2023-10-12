@@ -14,12 +14,11 @@ const Navbar = () => {
 
     return (
     <Box sx={{ width: '100%' }}>
-        <Box sx={{ borderBottom: 1, borderColor: 'divider', paddingLeft:20, paddingRight:20, backgroundColor:"gray" }}>
+        <Box sx={{ paddingLeft:20, paddingRight:20, backgroundColor:"#F0F0F0"}}>
             <FlexSpaceBetween>
                 <ProjectsTabs/>
                 <IconButton onClick={handleClick} sx={{
                     '&.MuiButtonBase-root':{
-                        color: 'black',
                         width: '40px',
                         height: '40px',
 
