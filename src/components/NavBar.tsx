@@ -11,7 +11,7 @@ type NavBarProps= {
 const Navbar = (props: NavBarProps) => {
     return (
     <Box sx={{ width: '100%' }}>
-        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+        <Box sx={{ borderBottom: 1, borderColor: 'divider', paddingLeft:20, paddingRight:20, backgroundColor:"gray" }}>
             <SpaceBetween>
                 <ProjectsTabs projects={props.projects}/>
                 <AddCircleOutlineIcon/>
