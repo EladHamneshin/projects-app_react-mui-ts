@@ -1,9 +1,35 @@
 import { Box, Button, Modal, TextField, Typography } from "@mui/material";
+import { useAppDispatch } from "../hooks/useAppRedux";
+import { addProject } from "../slices/projectSlice";
+import { useRef } from "react";
 
-const AddProjectModal = () => {
-    return    <Modal
-                open={true}
-                onClose={()=>{}}>
+type AddProjectModalProps = {
+    show: boolean,
+    setShow: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+const AddProjectModal = (props: AddProjectModalProps) => {
+    const {show, setShow} = props;
+    const projectName = useRef("");
+    const dispatch = useAppDispatch();
+
+    const handleCreateClick = ()=>{
+        if(projectName.current === "")
+            return
+
+        dispatch(addProject({name: projectName.current}))
+        setShow(false);
+    }
+
+    const handleCancelClick = ()=>{
+        setShow(false);
+    }
+
+    return <Modal
+                open={show}
+                onClose={()=>{
+                    setShow(false);
+                }}>
                     <Box id="modal-modal" sx={
                         {
                             position: 'absolute' as 'absolute',
@@ -12,7 +38,6 @@ const AddProjectModal = () => {
                             transform: 'translate(-50%, -50%)',
                             width: 400,
                             bgcolor: 'background.paper',
-                            border: '0.5px solid #000',
                             boxShadow: 24,
                             p: 3,
                           }   
@@ -20,12 +45,12 @@ const AddProjectModal = () => {
                         <Typography  variant="h6" >
                         Create New Project
                         </Typography>
-                        <TextField
+                        <TextField onChange={(event)=> projectName.current = event.target.value}
                             label='Project Name' variant='standard'  name='name' 
                             sx={{ mt: 2, width: '100%' }}/>
                         <Box sx={{display:'flex', justifyContent:'end', marginTop: '7px'}}>
-                            <Button  >create</Button>
-                            <Button >cancel</Button>
+                            <Button onClick={handleCreateClick} >create</Button>
+                            <Button onClick={handleCancelClick} >cancel</Button>
                         </Box>
                     </Box>
                 </Modal>
