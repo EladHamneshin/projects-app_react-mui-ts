@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import ProjectTab from "../components/ProjectTab";
+import ProjectTabPanel from "../components/ProjectTabPanel";
 
 const router = createBrowserRouter([
     {
@@ -14,9 +14,10 @@ const router = createBrowserRouter([
         },
         {
             path: "/project/:name",
-            element: <ProjectTab/>
+            element: <ProjectTabPanel/>
         }
-    ]
+    ],
+    errorElement: <h1>404 Not Found!</h1>
     },
 ]);
 
