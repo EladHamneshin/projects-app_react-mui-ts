@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import TabPanel from "../components/TabPannel";
+import ProjectTab from "../components/ProjectTab";
 
 const router = createBrowserRouter([
     {
@@ -14,7 +14,7 @@ const router = createBrowserRouter([
         },
         {
             path: "/project/:name",
-            element: <TabPanel/>
+            element: <ProjectTab/>
         }
     ]
     },
