@@ -8,6 +8,11 @@ const router = createBrowserRouter([
     element: <App/>,
     children:[
         {
+            index: true,
+            path: "/",
+            element: <h1>Please Select a Project</h1>
+        },
+        {
             path: "/project/:name",
             element: <TabPanel/>
         }
