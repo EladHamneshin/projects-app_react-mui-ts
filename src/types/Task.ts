@@ -3,7 +3,7 @@ import Status from "./Status";
 
 type Task = {
     name: string,
-    endDate: Date,
+    dueDate: Date,
     description: Instruction[]
     status: Status
 }

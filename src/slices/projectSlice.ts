@@ -9,10 +9,17 @@ interface ProjectState{
 const date = new Date()
 
 const initialState : ProjectState = {
-    projects: [{name:'p1', tasks:[{name:"p11",endDate:date , status:"In Progress", description:[{description:"sdf"}]},
-    {name:"p12",endDate:date , status:"Pending", description:[{description:"sfg"}]},
-    {name:"p12",endDate:date , status:"Aborted", description:[{description:"sfg"}]},
-    {name:"p12",endDate:date , status:"Completed", description:[{description:"sfg"}]}]}],
+    projects: [{name:'p1', tasks:[
+        {name:"p11",dueDate:date , status:"In Progress", description:[{description:"sdf"}]},
+        {name:"p12",dueDate:date , status:"Pending", description:[{description:"sfg"}]},
+        {name:"p13",dueDate:date , status:"Aborted", description:[{description:"sfg"}]},
+        {name:"p14",dueDate:date , status:"Completed", description:[{description:"sfg"}]}]},
+    {name:'p2', tasks:[
+        {name:"p11",dueDate:date , status:"In Progress", description:[{description:"sdf"}]},
+        {name:"p22",dueDate:date , status:"Pending", description:[{description:"sfg"}]},
+        {name:"p23",dueDate:date , status:"Aborted", description:[{description:"sfg"}]},
+        {name:"p24",dueDate:date , status:"Completed", description:[{description:"sfg"}]}]}
+    ],
     selected: false,
 }
 

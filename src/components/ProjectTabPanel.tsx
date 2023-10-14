@@ -2,7 +2,7 @@ import Typography from '@mui/material/Typography';
 import { useAppSelector, useAppDispatch } from '../hooks/useAppRedux';
 import { setSelected } from '../slices/projectSlice';
 import { useParams } from 'react-router-dom';
-import TasksTable from './TasksTable';
+import TasksTable from './TasksTable/TasksTable';
 import FlexCenterColumn from './styles/FlexCenterColumn';
 
 
