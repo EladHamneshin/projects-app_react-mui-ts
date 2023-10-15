@@ -1,6 +1,6 @@
-import FlexSpaceBetween from "./styles/FlexSpaceBetween";
+import FlexSpaceBetween from "./FlexWrapper/FlexSpaceBetween";
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
-import ProjectsTabs from "./ProjectsTabs";
+import ProjectsTabs from "./ProjectTabs/ProjectsTabs";
 import { Box, IconButton } from "@mui/material";
 import { useState } from "react";
 import AddProjectModal from "./AddProjectModal";

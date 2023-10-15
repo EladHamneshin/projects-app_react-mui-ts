@@ -1,6 +1,6 @@
 import { IconButton, TableRow } from "@mui/material"
 import StyledTableCell from "./StyledTableCell"
-import FlexSpaceBetween from "../styles/FlexSpaceBetween"
+import FlexSpaceBetween from "../FlexWrapper/FlexSpaceBetween"
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';

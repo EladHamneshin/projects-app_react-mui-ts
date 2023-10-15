@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import ProjectTabPanel from "../components/ProjectTabPanel";
+import ProjectTabPanel from "../components/ProjectTabs/ProjectTabPanel";
 
 const router = createBrowserRouter([
     {

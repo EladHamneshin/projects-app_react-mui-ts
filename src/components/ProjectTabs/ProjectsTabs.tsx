@@ -2,8 +2,8 @@ import * as React from 'react';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import { useNavigate } from 'react-router-dom';
-import { useAppSelector, useAppDispatch } from '../hooks/useAppRedux';
-import { setSelected } from '../slices/projectSlice';
+import { useAppSelector, useAppDispatch } from '../../hooks/useAppRedux';
+import { setSelected } from '../../slices/projectSlice';
 
 
 

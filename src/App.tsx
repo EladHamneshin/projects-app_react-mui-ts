@@ -1,7 +1,7 @@
 import './App.css'
 import Navbar from './components/NavBar';
 import { Outlet } from 'react-router-dom';
-import FlexCenterColumn from './components/styles/FlexCenterColumn';
+import FlexCenterColumn from './components/FlexWrapper/FlexCenterColumn';
 
 function App() {
 
