@@ -15,7 +15,7 @@ function ProjectTabPanel() {
   if(!name)
     return
 
-  // where user directly browse project path
+  // where user directly browse to project path
   if(selected === false){
     const projectName = name.split('_').join(' ')
     const projectIndex = projects.findIndex((p)=>p.name === projectName);
@@ -23,11 +23,11 @@ function ProjectTabPanel() {
   }
   
   return (
-    <div role="tabpanel">
+    <div role="tabpanel" style={{width:"100%"}}>
       {
       selected !== false &&
       <FlexCenterColumn>
-        <Typography variant='h2' marginTop={5}>{projects[selected].name}</Typography>
+        <Typography variant='h3' marginTop={5}>{projects[selected].name}</Typography>
         <TasksTable tasks={projects[selected].tasks}></TasksTable>
       </FlexCenterColumn>
       }

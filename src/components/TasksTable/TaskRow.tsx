@@ -33,7 +33,7 @@ const TaskRow = (props: TakRowProps)=>{
     return (
         <Fragment>
             <TableRow>
-                <StyledTableCell style={{borderLeft:"solid #393646 2px", width:380}}>
+                <StyledTableCell style={{borderLeft:"solid #393646 2px"}}>
                     <FlexSpaceBetween>
                     {task.name}
                     <IconButton
@@ -48,7 +48,11 @@ const TaskRow = (props: TakRowProps)=>{
                     {task.status}
                 </StyledTableCell>
                 <StyledTableCell align="center">{task.dueDate.toLocaleDateString()}</StyledTableCell>
-                <StyledTableCell align="center"><EditOutlinedIcon/></StyledTableCell>
+                <StyledTableCell align="center">
+                  <IconButton>
+                    <EditOutlinedIcon/>
+                  </IconButton>
+                </StyledTableCell>
             </TableRow>
             <TaskRowCollapse open={open} instructions={task.description}></TaskRowCollapse>
         </Fragment>

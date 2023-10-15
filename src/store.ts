@@ -4,7 +4,8 @@ import projectReducer from "./slices/projectSlice"
 export const store = configureStore({
     reducer:{
         project: projectReducer
-    }
+    },
+    devTools: true
 })
 
 export type RootState = ReturnType<typeof store.getState>
