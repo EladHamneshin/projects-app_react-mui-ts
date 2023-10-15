@@ -32,8 +32,8 @@ const AddProjectModal = (props: AddProjectModalProps) => {
                 }}>
                     <Box id="modal-modal" sx={
                         {
-                            position: 'absolute' as 'absolute',
-                            top: '50%',
+                            position: 'absolute',
+                            top: '45%',
                             left: '50%',
                             transform: 'translate(-50%, -50%)',
                             width: 400,
@@ -46,9 +46,9 @@ const AddProjectModal = (props: AddProjectModalProps) => {
                         Create New Project
                         </Typography>
                         <TextField onChange={(event)=> projectName.current = event.target.value}
-                            label='Project Name' variant='standard'  name='name' 
+                            label="Project's Name" variant='standard'  name='name' 
                             sx={{ mt: 2, width: '100%' }}/>
-                        <Box sx={{display:'flex', justifyContent:'end', marginTop: '7px'}}>
+                        <Box sx={{display:'flex', justifyContent:'end', marginTop:5}}>
                             <Button onClick={handleCreateClick} >create</Button>
                             <Button onClick={handleCancelClick} >cancel</Button>
                         </Box>

@@ -54,7 +54,7 @@ const TaskRow = (props: TakRowProps)=>{
                   </IconButton>
                 </StyledTableCell>
             </TableRow>
-            <TaskRowCollapse open={open} instructions={task.description}></TaskRowCollapse>
+            <TaskRowCollapse open={open} task={task}></TaskRowCollapse>
         </Fragment>
         
     )

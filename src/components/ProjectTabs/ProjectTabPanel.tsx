@@ -28,7 +28,7 @@ function ProjectTabPanel() {
       selected !== false &&
       <FlexCenterColumn>
         <Typography variant='h3' marginTop={5}>{projects[selected].name}</Typography>
-        <TasksTable tasks={projects[selected].tasks}></TasksTable>
+        <TasksTable project={projects[selected]}></TasksTable>
       </FlexCenterColumn>
       }
     </div>

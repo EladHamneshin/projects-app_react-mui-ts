@@ -5,22 +5,26 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import AddTaskTwoToneIcon from '@mui/icons-material/AddTaskTwoTone';
-import Task from '../../types/Task';
 import { Box, IconButton, TableCell } from '@mui/material';
 import TaskRow from './TaskRow';
+import CreateTaskModal from '../CreateTaskModal';
+import { useState } from 'react';
+import Project from '../../types/Project';
 
 type TasksTableProps = {
-  tasks?: Task[]
+  project: Project
 }
 
 function TasksTable(props: TasksTableProps) {
-    const {tasks} = props;
+    const {name ,tasks} = props.project;
+    const [show, setShow] = useState(false)
 
     if(!tasks)
       return
 
   return (
-    <Box sx={{marginTop:5, width:"50%"}}>
+    <>
+     <Box sx={{marginTop:5, width:"50%"}}>
       <TableContainer component={Box}>
         <Table size="small">
           <colgroup>
@@ -35,7 +39,7 @@ function TasksTable(props: TasksTableProps) {
               <TableCell align="center">Status</TableCell>
               <TableCell align="center">Due Date</TableCell>
               <TableCell align="center">
-                <IconButton>
+                <IconButton onClick={()=>setShow((prev)=>!prev)}>
                   <AddTaskTwoToneIcon/>
                 </IconButton>
               </TableCell>
@@ -43,12 +47,15 @@ function TasksTable(props: TasksTableProps) {
           </TableHead>
           <TableBody>
             {tasks.map((task, i) => (
-              <TaskRow task={task} key={i} ></TaskRow>
+              <TaskRow task={task} key={name + task.name + i} ></TaskRow>
             ))}
           </TableBody>
         </Table>
       </TableContainer>
     </Box>
+    <CreateTaskModal show={show} setShow={setShow}/>
+  </>
+   
     
   );
 }
